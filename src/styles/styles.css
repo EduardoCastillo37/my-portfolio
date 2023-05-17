@@ -1,0 +1,12 @@
+.nav{
+  --bs-link-color: #ffffff;
+}
+
+.nav-pills{
+  --bs-nav-pills-link-active-color: #000000;
+  --bs-nav-pills-link-active-bg: #ffffff77 ;
+}
+
+.navbar-brand{
+  color: #ffffff;
+}
