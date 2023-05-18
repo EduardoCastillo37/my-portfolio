@@ -76,15 +76,15 @@
       <div class="container">
         <h4 class="text-light">Enviame un correo</h4>
 
-        <form ref="form" @submit.prevent="sendEmail" autocomplete="off" class="send_email">
+        <form @submit.prevent="sendEmail" autocomplete="off" class="send_email">
           <div class="mb-3">
-            <input type="text" class="form-control shadow-none" placeholder="Nombre" name="name" required>
+            <input type="text" class="form-control shadow-none" placeholder="Nombre" v-model="name" required>
           </div>
           <div class="mb-3">
-            <input type="text" class="form-control shadow-none" placeholder="Email" name="email" required>
+            <input type="text" class="form-control shadow-none" placeholder="Email" v-model="email" required>
           </div>
           <div class="mb-3">
-            <textarea class="form-control shadow-none" placeholder="Mensaje" id="email" name="message"
+            <textarea class="form-control shadow-none" placeholder="Mensaje" id="email" v-model="message"
               required></textarea>
           </div>
           <button class="btn btn-light">Enviar</button>
@@ -118,7 +118,9 @@ export default {
         telephone: 'tel: +523340647107'
       },
       actualYear: new Date().getFullYear(),
-      email: ''
+      email: '',
+      name: '',
+      message: ''
     }
   },
   methods: {
@@ -127,7 +129,11 @@ export default {
         service_id: 'service_o7c7i1d',
         template_id: 'template_fqeccb4',
         user_id: 'uo6JZyc2wbfGyoBhe',
-        template_params: this.$refs.form
+        template_params: {
+          'name': this.name,
+          'email': this.email,
+          'message': this.message
+        }
       };
 
       $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
@@ -138,12 +144,18 @@ export default {
         Swal.fire({
           icon: 'success',
           text: '¡Correo enviado satisfactoriamente!'
-        })
+        });
+        this.email = '',
+        this.name = '',
+        this.message = ''
       }).fail(function () {
         Swal.fire({
           icon: 'question',
           text: '¡Ocurrio un error al tratar de enviarse, intente mas tarde!'
-        })
+        });
+        this.email = '',
+        this.name = '',
+        this.message = ''
       });
     }
   }
