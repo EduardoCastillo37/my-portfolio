@@ -10,3 +10,22 @@
 .navbar-brand{
   color: #ffffff;
 }
+
+#email{
+  height: 100%;
+  resize: none;
+}
+
+footer > div.d-flex {
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+footer > div.d-flex > div{
+  flex-basis: 50%;
+  flex-grow: 1;
+}
+
+.form-control:focus {
+  border: #000000;
+}

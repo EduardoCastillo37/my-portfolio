@@ -9,16 +9,16 @@
       <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="nav nav-pills">
           <li class="nav-item">
-            <a class="nav-link" href="/#scrollspyHeading1">First</a>
+            <a class="nav-link" href="/#about_me">Acerca de Mi</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/#scrollspyHeading2">Second</a>
+            <a class="nav-link" href="/#college">Formacion</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/#scrollspyHeading3">Third</a>
+            <a class="nav-link" href="/#career">Experiencia</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/#scrollspyHeading4">Fourth</a>
+            <a class="nav-link" href="/#knowledge">Conocimiento</a>
           </li>
         </ul>
       </div>
